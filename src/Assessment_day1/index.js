@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./style.css";
 
 const GameLogic = {
   generateRandomDigits: () => [
@@ -25,10 +26,7 @@ const Game = () => {
     const input = e.target.value;
     setUserAnswer(input);
 
-    if (
-      input === String(expression[0] + expression[1]) &&
-      round <= 3
-    ) {
+    if (input === String(expression[0] + expression[1]) && round <= 3) {
       if (round === 3) {
         setTotalTime(Date.now() - startTime);
       }
@@ -38,27 +36,24 @@ const Game = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen text-2xl">
+    <div className="game-container">
       {round <= 3 ? (
-
-        <div className="flex items-center gap-2">
-          <p className="text-center">
-            {expression[0]} + {expression[1]} = 
+        <div className="expression-container">
+          <p className="expression">
+            {expression[0]} + {expression[1]} =
           </p>
-
           <input
             type="text"
             value={userAnswer}
             onChange={handleInputChange}
-            className="border border-gray-300 rounded w-[50px] h-[50px] text-center"
+            className="input-box"
           />
         </div>
-
       ) : (
-        <div className="flex items-center gap-2">
-          <h1 className="font-bold">Game Over</h1>
+        <div className="game-over-container">
+          <h1 className="game-over-title">Game Over</h1>
           <p>Total Time: {totalTime} ms</p>
-        </ div>
+        </div>
       )}
     </div>
   );

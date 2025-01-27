@@ -1,0 +1,35 @@
+.game-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 1.5rem;
+  }
+  
+  .expression-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .expression {
+    text-align: center;
+  }
+  
+  .input-box {
+    border: 1px solid #d1d5db; /* border-gray-300 */
+    border-radius: 0.25rem; /* rounded corners */
+    width: 50px;
+    height: 50px;
+    text-align: center;
+  }
+  
+  .game-over-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .game-over-title {
+    font-weight: bold;
+  }
